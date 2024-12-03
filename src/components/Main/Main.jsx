@@ -3,6 +3,7 @@ import Form from '../Form/form'; // Import del componente Form
 import PostCard from '../PostCard/PostCard';
 import style from './Main.module.css';
 import posts from '../../data/posts';
+import cardImage from '../../assets/card600.jpg'
 
 export default function Main() {
     const [publishedPosts, setPublishedPosts] = useState(
@@ -11,14 +12,14 @@ export default function Main() {
 
     const handleAddPost = (title) => {
         const newPost = {
-            id: publishedPosts.length + 1, // Genera un nuovo ID
+            id: publishedPosts.length + 1, // Genero un nuovo ID
             title,
             tags: [],
-            image: 'default.jpg', // Un'immagine di default
+            image: cardImage, // immagine di default già esistente
             content: 'Contenuto del nuovo post',
             published: true,
         };
-        setPublishedPosts([...publishedPosts, newPost]); // Aggiungi il nuovo post alla lista
+        setPublishedPosts([...publishedPosts, newPost]); // Aggiungo il nuovo post alla lista
     };
 
     return (

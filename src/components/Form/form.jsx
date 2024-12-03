@@ -6,8 +6,8 @@ export default function Form({ onAddPost }) {
     const [title, setTitle] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Evito il ricaricamento della pagina
-        if (title.trim() === '') return; // Evito di aggiungere post vuoti
+        e.preventDefault(); // Evito il ricaricamento della pagina all'invio del bottone aggiungi
+        if (title.trim() === '') return; // Evito di aggiungere spazi vuoti
         onAddPost(title); // Passo il titolo al genitore
         setTitle(''); // Resetta  input
     };
