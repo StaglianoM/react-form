@@ -22,6 +22,11 @@ export default function Main() {
         setPublishedPosts([...publishedPosts, newPost]); // Aggiungo il nuovo post alla lista
     };
 
+
+    function deletePost(id) {
+        setPublishedPosts(publishedPosts.filter(post => post.id !== id))
+    }
+
     return (
         <main>
             <section className={style.section}>
@@ -39,6 +44,7 @@ export default function Main() {
                         {publishedPosts.map((post) => (
                             <div key={post.id} className="col-3">
                                 <PostCard
+                                    onDelete={() => deletePost(post.id)}
                                     title={post.title}
                                     tags={post.tags}
                                     image={post.image}
